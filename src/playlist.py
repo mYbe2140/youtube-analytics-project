@@ -33,6 +33,7 @@ class PlayList:
 
     def show_best_video(self):
         likes = 0
+        more_like_video = ""
         for video_id in self.video_ids:
             video_request = self.youtube.videos().list(id=video_id, part='statistics').execute()
             like_count = video_request['items'][0]['statistics']['likeCount']
